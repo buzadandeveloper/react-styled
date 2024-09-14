@@ -1,4 +1,4 @@
-import { GlobalStyles } from "../../GlobalStyles/GlobalStyles";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import logo from "../../assets/logo.svg";
 const ContainerNav = styled.div`
@@ -24,7 +24,7 @@ const LogoImg = styled.img`
 `;
 
 const LogoText = styled.h1`
-  font-size: 1.25rem;
+  font-size: 1.3em;
   color: ${({ theme }) => theme.colors.black};
   cursor: pointer;
 `;
@@ -59,17 +59,19 @@ const NavBarComplexButton = styled(NavBarSimpleButton)`
 `;
 
 export const NavBar = () => {
+  const navigate = useNavigate();
   return (
     <>
-      <GlobalStyles />
       <ContainerNav>
         <Nav>
-          <LogoContainer>
+          <LogoContainer onClick={() => navigate("/")}>
             <LogoImg src={logo} />
             <LogoText>Nexcent</LogoText>
           </LogoContainer>
           <NavContainerButtons>
-            <NavBarSimpleButton>Home</NavBarSimpleButton>
+            <NavBarSimpleButton onClick={() => navigate("/")}>
+              Home
+            </NavBarSimpleButton>
             <NavBarSimpleButton>Pricing</NavBarSimpleButton>
             <NavBarComplexButton>Register Now</NavBarComplexButton>
           </NavContainerButtons>
