@@ -73,7 +73,9 @@ export const NavBar = () => {
               Home
             </NavBarSimpleButton>
             <NavBarSimpleButton>Pricing</NavBarSimpleButton>
-            <NavBarComplexButton>Register Now</NavBarComplexButton>
+            <NavBarComplexButton onClick={() => navigate("/auth")}>
+              Sign In
+            </NavBarComplexButton>
           </NavContainerButtons>
         </Nav>
       </ContainerNav>
