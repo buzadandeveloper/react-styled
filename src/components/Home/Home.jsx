@@ -1,5 +1,6 @@
 import { NavBar } from "../NavBar/NavBar";
 import styled from "styled-components";
+import { OurClients } from "../OurClients/OurClients";
 import home from "../../assets/home.svg";
 
 const ContainerIntroHome = styled.div`
@@ -58,6 +59,8 @@ export const Home = () => {
           <HomeImage src={home} />
         </IntroContent>
       </ContainerIntroHome>
+      <OurClients/>
+      
     </>
   );
 };
